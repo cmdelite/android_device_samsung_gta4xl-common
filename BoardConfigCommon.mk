@@ -33,8 +33,8 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
 ## Audio
-$(call soong_config_set,exynos_audio,PREDEFINED_LOW_CAPTURE_DURATION,20)
-$(call soong_config_set,exynos_audio,PROXY_LIBRARY,//device/samsung/gta4xl-common:libaudioproxy)
+$(call soong_config_set_bool,exynos_audio,PREDEFINED_LOW_CAPTURE_DURATION,20)
+$(call soong_config_set_bool,exynos_audio,PROXY_LIBRARY,//device/samsung/gta4xl-common:libaudioproxy)
 
 ## Bluetooth
 BOARD_HAVE_BLUETOOTH_SLSI := true
@@ -59,7 +59,7 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
 ## Camera
-$(call soong_config_set,samsungCameraVars,usage_64bit,true)
+$(call soong_config_set_bool,samsungCameraVars,usage_64bit,true)
 
 ## Display
 BOARD_MINIMUM_DISPLAY_BRIGHTNESS := 1
@@ -115,7 +115,7 @@ TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_SOURCE := kernel/samsung/gta4xl
 
 ## Keymaster
-$(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/gta4xl-common:libskeymaster4device)
+$(call soong_config_set_bool,samsungVars,target_keymaster4_library,//vendor/samsung/gta4xl-common:libskeymaster4device)
 
 ## Manifest
 # HIDL
@@ -169,7 +169,7 @@ include device/samsung_slsi/sepolicy/sepolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
 ## USB
-$(call soong_config_set,samsungUsbGadgetVars,gadget_name,13200000.dwc3)
+$(call soong_config_set_bool,samsungUsbGadgetVars,gadget_name,13200000.dwc3)
 
 ## Verified Boot
 BOARD_AVB_ENABLE := true

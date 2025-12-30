@@ -140,9 +140,9 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung
 
 # Lineage Health
-$(call soong_config_set,lineage_health,fast_charge_node,/sys/class/sec/switch/afc_disable)
-$(call soong_config_set,lineage_health,fast_charge_value_none,1)
-$(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
+$(call soong_config_set_bool,lineage_health,fast_charge_node,/sys/class/sec/switch/afc_disable)
+$(call soong_config_set_bool,lineage_health,fast_charge_value_none,1)
+$(call soong_config_set_bool,lineage_health,fast_charge_value_fast_charge,0)
 
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
