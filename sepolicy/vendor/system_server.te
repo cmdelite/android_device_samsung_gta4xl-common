@@ -1,1 +1,3 @@
 allow system_server self:capability sys_module;
+
+allow system_server proc_irq:dir search;
